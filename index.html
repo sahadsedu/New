@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head><title>Time Table</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+    <body>
+        <div class="Head">
+            <div class="Head content">
+            <h1 align=center>SAFI TIMES</h1>
+            <hr>
+            </div>
+            <div class="course">      
+            <u><h2 align=center>COURSE</h2></u>
+            </div>
+<!--CLOCK-->
+<div><p id="MyClockDisplay" class="clock"></p></div>
+<script type="text/javascript">
+
+        var h1="Lulu";
+        var h2="Faseela";
+        var h3="Arshad";
+        var h4="Samad";
+        var h5="Razak";
+        var h6="Mansoor";
+
+            var date = new Date();
+      var h = date.getHours();
+      var m = date.getMinutes();
+      var s = date.getSeconds();
+      var session = "Am";
+      var day = date.getDay();
+      var dayarray = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday",)
+
+    function showTime()
+    {
+      var date = new Date();
+      var h = date.getHours();
+      var m = date.getMinutes();
+      var s = date.getSeconds();
+      var session = "Am";
+      var day = date.getDay();
+      var dayarray = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday",)
+
+      if (h==0){
+              h=12;
+              }
+
+          if (h>12){
+            h=h-12;
+            session="pm";
+          } 
+
+      h=(h<10)?"0"+h:h;
+      m=(m<10)?"0"+m:m;
+      s=(s<10)?"0"+s:s;
+
+      var time = h+":"+m+":"+s+"  "+session+" [ "+dayarray[day]+" ]";
+            document.getElementById("MyClockDisplay").innerText=time;
+            document.getElementById("MyClockDisplay").innerContent=time;
+
+        setTimeout(showTime,1000);
+   
+    {
+      if (m==50){
+            document.getElementById("now").innerHTML="NOW: "+h1;
+            document.getElementById("next").innerHTML="NEXT: "+h2;
+            }
+            if (m==51){
+            document.getElementById("now").innerHTML="NOW: "+h2;
+            document.getElementById("next").innerHTML="NEXT: "+h3;
+            }
+            if (m==52){
+            document.getElementById("now").innerHTML="NOW: "+h3;
+            document.getElementById("next").innerHTML="NEXT "+h4;}
+            if (m==53){
+            document.getElementById("now").innerHTML="NOW: "+h4;
+            document.getElementById("next").innerHTML="NEXT: "+h5;
+            }
+            if (m==54){
+            document.getElementById("now").innerHTML="NOW: "+h5;
+            document.getElementById("next").innerHTML="NEXT: "+h6;
+            }
+            if (m==55){
+            document.getElementById("now").innerHTML="NOW: "+h6;
+            document.getElementById("next").innerHTML="NEXT: CLASS END";
+             }
+    }
+    
+    }
+    showTime()
+
+    </script>
+    
+<!--TIME TABLE-->
+            <div class="teacher">
+                <p id="now" class="now">NOW: No class</p>
+                <p id="next" class="next">NEXT: No class</p>
+            </div>
+            <div class="row justify-content-center">
+            <table id="Master" class="content-table table-striped" >
+                        <thead>
+                        <tr>
+                            <th>DAY</th>
+                            <th>9:30</th>
+                            <th>10:30</th>
+                            <th>11:40</th>
+                            <th>12:40</th>
+                            <th>1:30</th>
+                            <th>2:30</th>
+                            
+                        </tr>
+                        </thead>
+                            <tbody>
+                                <tr>
+                                    <th id="monday">Monday</th>
+                                    <td id="H1">Sub</td> 
+                                    <td id="H2">Sub</td>                      
+                                    <td id="H3">Sub</td>
+                                    <td id="H4">Sub</td>
+                                    <td id="H5">Sub</td>
+                                    <td id="H6">Sub</td>
+                                </tr>       
+
+                                <tr>
+                                    <th id="tuesday" >Tuesday</th>
+                                    <td id="H7">Sub</td> 
+                                    <td id="H8">Sub</td>                      
+                                    <td id="H9">Sub</td>
+                                    <td id="H10">Sub</td>                                
+                                    <td id="H11">Sub</td>
+                                    <td id="H12">Sub</td>
+                                </tr>       
+
+                                <tr>
+                                    <th id="wednesday" >Wednesday</th>
+                                    <td id="H13">Sub</td> 
+                                    <td id="H14">Sub</td>                      
+                                    <td id="H15">Sub</td>
+                                    <td id="H16">Sub</td>
+                                    <td id="H17">Sub</td>
+                                    <td id="H18">Sub</td>
+                                </tr>       
+
+                                <tr>
+                                    <th id="thursday" >Thursday</th>
+                                    <td id="H19">Sub</td> 
+                                    <td id="H20">Sub</td>                      
+                                    <td id="H21">Sub</td>
+                                    <td id="H22">Sub</td>
+                                    <td id="H23">Sub</td>
+                                    <td id="H24">Sub</td>
+                                </tr>       
+                            
+                                <tr>
+                                    <th id="friday" >Friday</th>
+                                    <td id="H25">Sub</td> 
+                                    <td id="H26">Sub</td>                      
+                                    <td id="H27">Sub</td>
+                                    <td id="H28">Sub</td>
+                                    <td id="H29">Sub</td>
+                                    <td id="H30">Sub</td>
+                                </tr>                                                   
+                            </tbody>
+            </table>
+       
+        </div> 
+        
+    </body>
+    </html>
